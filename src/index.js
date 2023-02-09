@@ -1,8 +1,6 @@
-import { readFileSync } from 'fs';
-import path from 'path';
 import _ from 'lodash';
+import getParsedFile from './parsers.js';
 
-const getParsedFile = (filepath) => JSON.parse(readFileSync(path.resolve(filepath), 'utf8'));
 // const getParsedFile = (filepath) => {
 // return JSON.parse(readFileSync(path.resolve(process.cwd(), filepath), 'utf8'));
 // };
