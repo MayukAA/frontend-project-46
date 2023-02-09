@@ -13,6 +13,12 @@ test('diff flat .json', () => {
   const file1 = getFixturePath('file1.json');
   const file2 = getFixturePath('file2.json');
   const expectedFile = readFile('expectedTestFile.txt');
-  const result = genDiff(file1, file2);
-  expect(result).toEqual(expectedFile.trim());
+  expect(genDiff(file1, file2)).toEqual(expectedFile.trim());
+});
+
+test('diff flat .yaml', () => {
+  const file1 = getFixturePath('file1.yaml');
+  const file2 = getFixturePath('file2.yaml');
+  const expectedFile = readFile('expectedTestFile.txt');
+  expect(genDiff(file1, file2)).toEqual(expectedFile.trim());
 });
