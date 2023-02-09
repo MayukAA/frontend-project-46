@@ -12,3 +12,7 @@
 Diff file1.json file2.json:
 
 [![asciicast](https://asciinema.org/a/9BO9tU3EXRbUdZNjSqyKkBXRd.png)](https://asciinema.org/a/9BO9tU3EXRbUdZNjSqyKkBXRd)
+
+Diff file1.yaml file2.yaml:
+
+[![asciicast](https://asciinema.org/a/kDP360yZumKR4p9wFzee395O6.png)](https://asciinema.org/a/kDP360yZumKR4p9wFzee395O6)
