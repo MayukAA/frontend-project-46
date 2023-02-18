@@ -6,12 +6,12 @@ import stylish from './formatters/stylish.js';
 // return JSON.parse(readFileSync(path.resolve(process.cwd(), filepath), 'utf8'));
 // };
 
-const genDiff = (filepath1, filepath2) => {
+const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const file1 = getParsedFile(filepath1);
   const file2 = getParsedFile(filepath2);
 
   const treeDiff = buildTree(file1, file2);
-  return stylish(treeDiff);
+  return stylish(treeDiff, format);
 };
 
 export default genDiff;
