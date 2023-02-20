@@ -17,6 +17,10 @@ Diff file1.yaml file2.yaml:
 
 [![asciicast](https://asciinema.org/a/R8pxtIfwEu1ollx0qjGcESuZW.png)](https://asciinema.org/a/R8pxtIfwEu1ollx0qjGcESuZW)
 
-Diff deep file:
+Diff deep file; format stylish:
 
 [![asciicast](https://asciinema.org/a/KkPVs86AIZeFfEayrhFbyIjWh.png)](https://asciinema.org/a/KkPVs86AIZeFfEayrhFbyIjWh)
+
+Diff deep file; format plain:
+
+[![asciicast](https://asciinema.org/a/TjEcrsLEqsp5FAbiY6tvjSRN4.png)](https://asciinema.org/a/TjEcrsLEqsp5FAbiY6tvjSRN4)
