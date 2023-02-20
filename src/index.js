@@ -12,7 +12,6 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const file2 = getParsedFile(filepath2);
 
   const treeDiff = buildTree(file1, file2);
-  // return stylish(treeDiff, format);
   return index(treeDiff, formatName);
 };
 

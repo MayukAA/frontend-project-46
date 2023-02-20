@@ -31,7 +31,7 @@ const buildStylish = (object, indent = 0) => object
         return `${getIndent(indent)}  - ${stringify(key, value1, indent + 2)}\n${getIndent(indent)}  + ${stringify(key, value2, indent + 2)}`;
       }
       default:
-        throw new Error(`Formatter ${status} - is invalid`);
+        throw new Error(`Status ${status} - is invalid`);
     }
   }).join('\n');
 
