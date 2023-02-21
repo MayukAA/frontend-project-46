@@ -10,19 +10,20 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
 const formatPlain = 'plain';
+const formatJson = 'json';
 const expectedFile = readFile('expectedTestFile.txt');
 const expectedFileForPlain = readFile('expectedTestFileForPlain.txt');
+const expectedFileForJson = readFile('expectedTestFileForJson.json');
 
-test('diff .json', () => {
-  const file1 = getFixturePath('file1.json');
-  const file2 = getFixturePath('file2.json');
-  expect(genDiff(file1, file2)).toEqual(expectedFile.trim());
-  expect(genDiff(file1, file2, formatPlain)).toEqual(expectedFileForPlain.trim());
-});
-
-test('diff .yaml', () => {
-  const file1 = getFixturePath('file1.yaml');
-  const file2 = getFixturePath('file2.yaml');
-  expect(genDiff(file1, file2)).toEqual(expectedFile.trim());
-  expect(genDiff(file1, file2, formatPlain)).toEqual(expectedFileForPlain.trim());
+test('genDiff', () => {
+  const fileJson1 = getFixturePath('file1.json');
+  const fileJson2 = getFixturePath('file2.json');
+  const fileYaml1 = getFixturePath('file1.yaml');
+  const fileYaml2 = getFixturePath('file2.yaml');
+  expect(genDiff(fileJson1, fileJson2)).toEqual(expectedFile.trim());
+  expect(genDiff(fileYaml1, fileYaml2)).toEqual(expectedFile.trim());
+  expect(genDiff(fileJson1, fileJson2, formatPlain)).toEqual(expectedFileForPlain.trim());
+  expect(genDiff(fileYaml1, fileYaml2, formatPlain)).toEqual(expectedFileForPlain.trim());
+  expect(genDiff(fileJson1, fileJson2, formatJson)).toEqual(expectedFileForJson);
+  expect(genDiff(fileYaml1, fileYaml2, formatJson)).toEqual(expectedFileForJson);
 });
