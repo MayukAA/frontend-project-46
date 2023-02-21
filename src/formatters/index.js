@@ -1,5 +1,6 @@
 import stylish from './stylish.js';
 import plain from './plain.js';
+import json from './json.js';
 
 export default (treeDiff, formatName) => {
   switch (formatName) {
@@ -8,6 +9,8 @@ export default (treeDiff, formatName) => {
       return stylish(treeDiff);
     case 'plain':
       return plain(treeDiff);
+    case 'json':
+      return json(treeDiff);
     default:
       throw new Error(`Format ${formatName} - is invalid`);
   }
