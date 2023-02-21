@@ -23,7 +23,7 @@ const buildStylish = (object, indent = 0) => object
       case 'deleted':
         return `${getIndent(indent)}  - ${stringify(key, value, indent + 2)}`;
       case 'nested':
-        return `${getIndent(indent + 2)}${key}: {\n${buildStylish(value, indent + 2)}\n${getIndent(indent + 2)}}`;
+        return `${getIndent(indent + 2)}${key}: {\n${buildStylish(node.children, indent + 2)}\n${getIndent(indent + 2)}}`;
       case 'unchanged':
         return `${getIndent(indent + 2)}${key}: ${value}`;
       case 'changed': {
@@ -35,6 +35,4 @@ const buildStylish = (object, indent = 0) => object
     }
   }).join('\n');
 
-const stylish = (object) => `{\n${buildStylish(object)}\n}`;
-
-export default stylish;
+export default (object) => `{\n${buildStylish(object)}\n}`;

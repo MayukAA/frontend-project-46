@@ -15,7 +15,7 @@ const buildTree = (file1, file2) => {
       return { key, value: jointFile[key], status: 'deleted' };
     }
     if (_.isPlainObject(value1) && _.isPlainObject(value2)) { // Оба файла - объекты;
-      return { key, value: buildTree(value1, value2), status: 'nested' };
+      return { key, children: buildTree(value1, value2), status: 'nested' };
     }
     if (value1 === value2) { // Значения файлов одинаковы, значит, файлы не объекты;
       return { key, value: value1, status: 'unchanged' };

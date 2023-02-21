@@ -20,10 +20,10 @@ test('genDiff', () => {
   const fileJson2 = getFixturePath('file2.json');
   const fileYaml1 = getFixturePath('file1.yaml');
   const fileYaml2 = getFixturePath('file2.yaml');
-  expect(genDiff(fileJson1, fileJson2)).toEqual(expectedFile.trim());
-  expect(genDiff(fileYaml1, fileYaml2)).toEqual(expectedFile.trim());
-  expect(genDiff(fileJson1, fileJson2, formatPlain)).toEqual(expectedFileForPlain.trim());
-  expect(genDiff(fileYaml1, fileYaml2, formatPlain)).toEqual(expectedFileForPlain.trim());
+  expect(genDiff(fileJson1, fileJson2)).toEqual(expectedFile);
+  expect(genDiff(fileYaml1, fileYaml2)).toEqual(expectedFile);
+  expect(genDiff(fileJson1, fileJson2, formatPlain)).toEqual(expectedFileForPlain);
+  expect(genDiff(fileYaml1, fileYaml2, formatPlain)).toEqual(expectedFileForPlain);
   expect(genDiff(fileJson1, fileJson2, formatJson)).toEqual(expectedFileForJson);
   expect(genDiff(fileYaml1, fileYaml2, formatJson)).toEqual(expectedFileForJson);
 });

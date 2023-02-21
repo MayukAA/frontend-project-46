@@ -19,7 +19,7 @@ export default (object) => {
         case 'deleted':
           return `Property '${newAncestry}' was removed`;
         case 'nested':
-          return `${iter(value, `${newAncestry}.`)}`;
+          return `${iter(node.children, `${newAncestry}.`)}`;
         case 'unchanged':
           return [];
         case 'changed': {
