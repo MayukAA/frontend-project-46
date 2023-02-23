@@ -8,18 +8,18 @@ const buildTree = (file1, file2) => {
     const value1 = file1[key];
     const value2 = file2[key];
 
-    if (!Object.hasOwn(file1, key)) { // Есть только file2;
+    if (!Object.hasOwn(file1, key)) {
       return { key, value: jointFile[key], status: 'added' };
     }
-    if (!Object.hasOwn(file2, key)) { // Есть только file1;
+    if (!Object.hasOwn(file2, key)) {
       return { key, value: jointFile[key], status: 'deleted' };
     }
-    if (_.isPlainObject(value1) && _.isPlainObject(value2)) { // Оба файла - объекты;
+    if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
       return { key, children: buildTree(value1, value2), status: 'nested' };
     }
-    if (value1 === value2) { // Значения файлов одинаковы, значит, файлы не объекты;
+    if (value1 === value2) {
       return { key, value: value1, status: 'unchanged' };
-    } // 3начения файлов различны;
+    }
     return { key, value: [value1, value2], status: 'changed' };
   });
 };
