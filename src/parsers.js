@@ -1,19 +1,12 @@
-import { readFileSync } from 'fs';
-import path from 'path';
 import yaml from 'js-yaml';
 
-const getReadedFile = (filepath) => readFileSync(path.resolve(filepath), 'utf8');
-
-export default (filepath) => {
-  const readedFile = getReadedFile(filepath);
-  const fileExtension = path.extname(filepath);
-
+export default (file, fileExtension) => {
   switch (fileExtension) {
     case '.json':
-      return JSON.parse(readedFile);
+      return JSON.parse(file);
     case '.yml':
     case '.yaml':
-      return yaml.load(readedFile);
+      return yaml.load(file);
     default:
       throw new Error(`Extension ${fileExtension} - is invalid`);
   }
