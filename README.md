@@ -28,6 +28,10 @@ Installed [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/).
 
 After installation, you can learn how to use the utility using the **gendiff** command and the **-h** flag: `gendiff -h`.
 
+Run the tests: `make test`.
+
+Run the linter: `make lint`.
+
 ### Video Demonstration
 
 Diff of flat **json** files:
@@ -44,20 +48,20 @@ Diff of flat **yaml** files:
 
 Diff of deep files. Format **stylish**:
 
-`gendiff path/to/file1... path/to/file2...`
+`gendiff path/to/file1.(format) path/to/file2.(format)`
 or
-`gendiff -f stylish path/to/file1... path/to/file2...`
+`gendiff -f stylish path/to/file1.(format) path/to/file2.(format)`
 
 [![asciicast](https://asciinema.org/a/KkPVs86AIZeFfEayrhFbyIjWh.png)](https://asciinema.org/a/KkPVs86AIZeFfEayrhFbyIjWh)
 
 Diff of deep files. Format **plain**:
 
-`gendiff -f plain path/to/file1... path/to/file2...`
+`gendiff -f plain path/to/file1.(format) path/to/file2.(format)`
 
 [![asciicast](https://asciinema.org/a/TjEcrsLEqsp5FAbiY6tvjSRN4.png)](https://asciinema.org/a/TjEcrsLEqsp5FAbiY6tvjSRN4)
 
 Diff of deep files. Format **json**:
 
-`gendiff -f json path/to/file1... path/to/file2...`
+`gendiff -f json path/to/file1.(format) path/to/file2.(format)`
 
 [![asciicast](https://asciinema.org/a/l7JlHV5ncZbc93GpK2b7keQCz.png)](https://asciinema.org/a/l7JlHV5ncZbc93GpK2b7keQCz)
