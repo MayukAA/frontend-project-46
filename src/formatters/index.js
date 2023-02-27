@@ -4,7 +4,6 @@ import json from './json.js';
 
 export default (treeDiff, formatName) => {
   switch (formatName) {
-    case '':
     case 'stylish':
       return stylish(treeDiff);
     case 'plain':
