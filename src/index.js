@@ -4,7 +4,7 @@ import parser from './parsers.js';
 import buildTree from './treeBuilder.js';
 import getFormatted from './formatters/index.js';
 
-const getReadedFile = (filepath) => readFileSync(path.resolve(filepath), 'utf8');
+const getReadedFile = (filepath) => readFileSync(path.resolve(process.cwd(), filepath), 'utf8');
 
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const file1 = getReadedFile(filepath1);
